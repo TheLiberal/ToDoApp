@@ -1,0 +1,140 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Open Sans", sans-serif;
+  background: #ffc1c1;
+  background: linear-gradient(135deg, #ffc1c1 0%, #a77ac8 91%);
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
+.card {
+  width: 400px;
+  height: 700px;
+  background: #FAFAF2;
+  border-radius: 15px;
+}
+
+.top-bar {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 200px 200px;
+      grid-template-columns: 200px 200px;
+  -ms-grid-rows: 80px;
+      grid-template-rows: 80px;
+  height: 80px;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.left-tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.right-tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #e9eaeb;
+  border-radius: 0 15px 0 0;
+}
+
+section {
+  padding: 1.5rem;
+}
+
+.checkbox {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: min-content auto;
+      grid-template-columns: -webkit-min-content auto;
+      grid-template-columns: min-content auto;
+  grid-gap: 0.5em;
+  font-size: 1.5rem;
+}
+
+.checkbox-input {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "checkbox";
+}
+
+.checkbox-input > * {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: checkbox;
+}
+
+.checkbox-input input {
+  opacity: 0;
+  width: 1em;
+  height: 1em;
+}
+
+.checkbox-input input:checked + .checkbox-control svg {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.checkbox-input input:focus + .checkbox-control {
+  -webkit-box-shadow: 0 0 0 0.05em #fff, 0 0 0.15em 0.1em #a77ac8;
+          box-shadow: 0 0 0 0.05em #fff, 0 0 0.15em 0.1em #a77ac8;
+}
+
+.checkbox-control {
+  display: -ms-inline-grid;
+  display: inline-grid;
+  width: 1em;
+  height: 1em;
+  border-radius: 0.3em;
+  border: 0.1em solid #D1D3D4;
+}
+
+.checkbox-control svg {
+  -webkit-transition: -webkit-transform 0.1s ease-in 25ms;
+  transition: -webkit-transform 0.1s ease-in 25ms;
+  transition: transform 0.1s ease-in 25ms;
+  transition: transform 0.1s ease-in 25ms, -webkit-transform 0.1s ease-in 25ms;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+.checkbox-text {
+  line-height: 1;
+}
+/*# sourceMappingURL=style.css.map */
