@@ -136,5 +136,26 @@ section {
 
 .checkbox-text {
   line-height: 1;
+  position: relative;
+  --dynamic-width: 0px;
+}
+
+.checkbox-text.strikethrough {
+  color: #D1D3D4;
+}
+
+.checkbox-text.strikethrough::after {
+  content: "";
+  width: var(--dynamic-width);
+  height: 2px;
+  background-color: #D1D3D4;
+  display: block;
+  position: relative;
+  top: -10px;
+  left: 0;
+}
+
+.checkbox-text.finished {
+  color: #D1D3D4;
 }
 /*# sourceMappingURL=style.css.map */

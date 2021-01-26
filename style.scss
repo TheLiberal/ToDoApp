@@ -103,5 +103,28 @@ section {
 
     &-text {
         line-height: 1;
+        position: relative;
+        --dynamic-width: 0px;
+
+        &.strikethrough {
+            color: #D1D3D4;
+
+            &::after {
+                content: "";
+                width: var(--dynamic-width);
+                height: 2px;
+                background-color: #D1D3D4;
+                display: block;
+                position: relative;
+                top: -10px;
+                left: 0;
+            }
+
+        }
+
+        &.finished {
+            color: #D1D3D4;
+        }
+
     }
 }
