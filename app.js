@@ -1,22 +1,22 @@
 "use strict";
 
-
-
 let textToCalculate = document.querySelector(".checkbox-text").textContent;
 let textWidth = Math.ceil(displayTextWidth(textToCalculate, "24px Open Sans"));
 
-
-
-
-document.querySelector(".checkbox-tick").addEventListener("input", toggleStrikethrough);
-
-
-function toggleStrikethrough(event) {
-    event.preventDefault();
-    document.querySelector(".checkbox-text").style.setProperty("--dynamic-width", textWidth + "px");
-    document.querySelector(".checkbox-text").classList.toggle("strikethrough");
+const allTasks = document.getElementsByClassName("checkbox-tick");
+for (let task of allTasks) {
+    task.addEventListener("input", (event) => {
+        event.preventDefault();
+        task.parentElement.nextElementSibling.classList.toggle("strikethrough");
+        for (let i = 0; i <= textWidth; i++) {
+            setTimeout(() => {
+                task.parentElement.nextElementSibling.style.setProperty("--dynamic-width", i + "px");
+            }, i * 2);
+        }
+    });
 
 }
+
 
 function displayTextWidth(text, font) {
     let canvas = displayTextWidth.canvas || (displayTextWidth.canvas = document.createElement("canvas"));
