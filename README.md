@@ -1,4 +1,4 @@
-# [ToDoApp](https://todovanillaapp.netlify.app/)
+# [ToDo App](https://todovanillaapp.netlify.app/)
 
 This is a simple ToDoApp made with vanilla JS
 
