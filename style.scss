@@ -17,12 +17,18 @@ body {
     font-family: "Open Sans", sans-serif;
     background: rgb(255, 193, 193);
     background: linear-gradient(135deg, rgba(255, 193, 193, 1) 0%, rgba(167, 122, 200, 1) 91%);
+    transition: all 0.2s ease-in-out;
 }
 
 .container {
     display: flex;
     align-items: center;
     height: 100vh;
+}
+
+.blur {
+    transition: all 0.2s ease-in-out;
+    filter: blur(2px) opacity(0.7);
 }
 
 .card {
@@ -42,6 +48,7 @@ body {
     height: 80px;
     width: 100%;
     border-radius: 15px;
+    transition: all 0.2s ease-in-out;
 }
 
 .left-tab {
@@ -58,8 +65,9 @@ body {
     border-radius: 0 15px 0 0;
 }
 
-section {
+.tasks {
     padding: 1.5rem;
+    transition: all 0.2s ease-in-out;
 }
 
 .checkbox {
@@ -67,7 +75,7 @@ section {
     grid-template-columns: min-content auto;
     grid-gap: 0.5em;
     font-size: 1.5rem;
-    margin: 0.75rem 0rem 0.75rem 0rem;
+    margin: 0.75rem 0rem 1rem 0rem;
 
     &-input {
         display: grid;
@@ -130,7 +138,6 @@ section {
                 top: -10px;
                 left: 0;
                 visibility: visible;
-
             }
 
         }
@@ -156,12 +163,76 @@ section {
     box-shadow: 0 8px 16px rgba(46, 44, 44, 0.205);
     cursor: pointer;
     color: $card-background;
+    z-index: 999;
 
     &:hover {
         background: #f8ab5e;
         transition: 0.125s ease-in-out;
     }
 }
+
+.hidden {
+    display: none;
+}
+
+.pop-up {
+    position: absolute;
+    width: 300px;
+    right: 50px;
+    bottom: 30px;
+    min-height: 50px;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 15px;
+    background: rgb(255, 193, 193);
+    background: linear-gradient(135deg, rgba(255, 193, 193, 1) 0%, rgba(167, 122, 200, 1) 91%);
+
+    textarea {
+        display: block;
+        width: 100%;
+        min-height: 50px;
+        border: none;
+        border-radius: 10px;
+        background: $card-background;
+        resize: none;
+        font-family: "Open Sans", sans-serif;
+        font-size: 1.25rem;
+        padding: 0.75rem;
+        text-align: center;
+        overflow: hidden;
+    }
+}
+
+.slide-top {
+    -webkit-animation: slide-top 0.5s cubic-bezier(0.785, 0.135, 0.150, 0.860) forwards;
+    animation: slide-top 0.5s cubic-bezier(0.785, 0.135, 0.150, 0.860) forwards;
+}
+
+@-webkit-keyframes slide-top {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    100% {
+        -webkit-transform: translateY(-100px);
+        transform: translateY(-100px);
+    }
+}
+
+@keyframes slide-top {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    100% {
+        -webkit-transform: translateY(-100px);
+        transform: translateY(-100px);
+    }
+}
+
+
 
 @media screen and(max-width: 450px) {
     .card {
